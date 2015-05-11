@@ -8,18 +8,10 @@
 
 namespace App\Model;
 
-use Core\Configuration;
-use Core\Mysql;
-
-class TablesInfo {
-
-    private $db;
-    private $config;
+class TablesInfo extends Model {
 
     function __construct() {
-        $this->config = Configuration::GetConfig();
-        $this->db = new Mysql($this->config["mysql"]);
-
+        parent::GetConnection();
     }
 
     function GetTableList() {

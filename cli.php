@@ -6,9 +6,9 @@
  * Time: 17:16
  */
 
+//error_reporting(0);
 
 define ('ROOT', dirname(__FILE__).DIRECTORY_SEPARATOR);
-
 
 function __autoload($class_name) {
     $class_name = str_replace("\\", DIRECTORY_SEPARATOR, $class_name);
@@ -19,12 +19,16 @@ function __autoload($class_name) {
     }
 }
 
-$ar = new \App\Controller\CLI();
+
+$Cli = new \App\Controller\CLI();
 
 try {
-    $ar->cli_start();
+
+    $Cli->cli_start();
+
 } catch (Exception $e) {
 
     print "ERROR: " . $e->getMessage() . PHP_EOL;
     exit;
+
 }

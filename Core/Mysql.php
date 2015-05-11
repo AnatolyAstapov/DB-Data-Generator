@@ -4,9 +4,9 @@ namespace Core;
 
 class Mysql {
     
-    public $isConnected = false;
+    public  $isConnected = false;
     private $datab;
-    public $msg;
+    public  $msg;
 
     public function __construct($conf){
         if($this->isConnected && $this->datab) return true;

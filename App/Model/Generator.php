@@ -8,21 +8,16 @@
 
 namespace App\Model;
 
-use Core\Configuration;
-use Core\Mysql;
 
-class Generator {
+class Generator extends Model {
 
     private $data;
     private $collection;
-    private $db;
     private $history;
 
     function __construct(array $data) {
         $this->data = $data;
-        $this->config = Configuration::GetConfig();
-        //TODO 2й конекшон
-        $this->db = new Mysql($this->config["mysql"]);
+        parent::GetConnection();
     }
 
     function Run() {
